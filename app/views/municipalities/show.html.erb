@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @municipality.Department.description %>
+</p>
+
+<p>
+  <strong>Num depto:</strong>
+  <%= @municipality.Department.num_dept %>
+</p>
+
+<p>
+  <strong>Num municip:</strong>
+  <%= @municipality.num_municip %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @municipality.description %>
+</p>
+
+<%= link_to 'Edit', edit_municipality_path(@municipality) %> |
+<%= link_to 'Back', municipalities_path %>

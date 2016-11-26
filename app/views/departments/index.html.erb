@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Departments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Codigo de Departamento</th>
+      <th>Descripción</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @departments.each do |department| %>
+      <tr>
+        <td><%= department.num_dept %></td>
+        <td><%= department.description %></td>
+        <td><%= link_to 'Mostrar', department %></td>
+        <td><%= link_to 'Editar', edit_department_path(department) %></td>
+        <td><%= link_to 'Eliminar', department, method: :delete, data: { confirm: 'Esta Seguro que desea Eliminarlo?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Agregar Departamento', new_department_path %>
