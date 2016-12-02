@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Department: one
+  num_municip: MyString
+  description: MyString
+
+two:
+  Department: two
+  num_municip: MyString
+  description: MyString

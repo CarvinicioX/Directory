@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Código de Municipio:</strong>
+  <%= @sector.Municipality.num_municip %>
+</p>
+
+<p>
+  <strong>Código de Sector:</strong>
+  <%= @sector.num_sector %>
+</p>
+
+<p>
+  <strong>Descripción:</strong>
+  <%= @sector.description %>
+</p>
+
+<%= link_to 'Modificar', edit_sector_path(@sector) %> |
+<%= link_to 'Atras', sectors_path %>

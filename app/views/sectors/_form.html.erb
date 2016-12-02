@@ -1,0 +1,32 @@
+<%= form_for(sector) do |f| %>
+  <% if sector.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sector.errors.count, "error") %> prohibited this sector from being saved:</h2>
+
+      <ul>
+      <% sector.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :"Código de Municipio" %>
+    <%= f.collection_select(:Municipality_id, Municipality.all, :id, :num_municip) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Código de Sector" %>
+    <%= f.text_field :num_sector %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Descripción" %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

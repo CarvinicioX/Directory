@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Municipios de <%= Department.find(params[:department]).num_depto %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Departamento</th>
+      <th>Código de Municipio</th>
+      <th>Descripción</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @municipalities.where(Department: params[:department]).each do |municipality| %>
+      <!--% @municipalities.where("Department.id = ?", params[:d_id]) do |municipality| %-->
+      <tr>
+        <script>
+          console.log(<%= municipality.Department.id %>)
+        </script>
+        <td><%= municipality.Department.num_depto %></td>
+        <td><%= municipality.num_municip %></td>
+        <td><%= municipality.description %></td>
+        <td><%= link_to 'Mostrar', municipality %></td>
+        <td><%= link_to 'Modificar', edit_municipality_path(municipality) %></td>
+        <td><%= link_to 'Eliminar', municipality, method: :delete, data: { confirm: 'Esta Seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Municipio', new_municipality_path(:kk => params[:department]) %>

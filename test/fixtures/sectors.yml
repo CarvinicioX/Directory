@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Municipality: one
+  num_sector: MyString
+  description: MyString
+
+two:
+  Municipality: two
+  num_sector: MyString
+  description: MyString
